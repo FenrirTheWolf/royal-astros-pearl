@@ -1,0 +1,214 @@
+/* ==UserStyle==
+@name           E621 - Royal Astros Pearl
+@namespace      https://github.com/FenrirTheWolf/royal-astros-pearl/style.css
+@version        0.0.1
+@description    A much more rich, majestic, serene, deep theme for e621.net
+@author         Fenrir
+
+@advanced dropdown lrgicn "Icon Size" {
+	lrgicn_no "Default" <<<EOT .nope  EOT;
+	lrgicn_yes "Large" <<<EOT  EOT;	
+}
+
+@advanced dropdown tagbar "Tags Bar" {
+	tagbar_yes "Shown" <<<EOT .nope EOT;
+	tagbar_no "Hidden" <<<EOT EOT;
+}
+
+@advanced dropdown searchbar "Search Bars" {
+	searchbar_yes "Shown" <<<EOT .nope EOT;
+	searchbar_no "Hidden" <<<EOT EOT;
+}
+
+@advanced dropdown usrnme "Username" {
+	usrnme_yes "Shown" <<<EOT .nope EOT;
+	usrnme_no "Hidden" <<<EOT EOT;
+}
+
+==/UserStyle== */
+@-moz-document url-prefix("https://e621.net/posts") {
+	
+	body{
+		background-image: var(--image-background)!important;
+	}
+
+	/*[[lrgicn]]*/
+	body > div > div[id="c-posts"] > div > section > div[id="posts"] > div[id="posts-container"] > article > a > picture > img {
+		width: 400px!important;
+		height: 400px!important;
+		max-width: fit-content!important;
+		max-height: fit-content!important;
+		/* 		aspect-ratio: auto!important; */
+	}
+	/*[[lrgicn]]*/
+	body > div > div[id="c-posts"] > div > section > div[id="posts"] > div[id="posts-container"] > article {
+		width: 400px!important;
+		height: 400px!important;
+		max-width: fit-content!important;
+		max-height: fit-content!important;
+	}
+	/*[[lrgicn]]*/
+	body > div > div[id="c-posts"] > div > section > div[id="posts"] > div[id="posts-container"] > article > div {
+		border: #f000 solid 0px!important;
+		width: inherit!important;
+	}
+	/*[[lrgicn]]*/
+	article.post-preview {
+		margin: 0 10px 40px 0!important;
+	}
+
+	/*[[tagbar]]*/
+	aside#sidebar {
+		visibility: hidden!important;
+		display: none!important;
+		float: none!important;
+	}
+	/*[[tagbar]]*/
+	section#content {
+		margin-left: 0px!important;
+		padding-left: 0px!important;
+	}
+
+	/*[[tagbar]]*/
+	.paginator {
+		padding-right: 15px!important;
+		font-size: 20px!important
+	}
+	/*[[tagbar]]*/
+	img[class="fit-window"] {
+		width: 100%!important;
+		max-width: 100%!important;
+	}
+}
+
+@-moz-document url-prefix("https://e621.net/users") {
+
+	/* Larger text gap in settings*/
+	li {
+		padding-top: 12px!important;
+		font-size: 17px!important;
+	}
+	div[class="input"] > p:has(a[href^="/maintenance/user/email_change/new"]) {
+		filter: blur(3px)!important;
+	}
+}
+
+@-moz-document url-prefix("https://e621.net/users/home") {
+
+	li[id="subnav-sign-out"],
+	li[id="subnav-settings"],
+	menu[class="secondary "] > li:nth-child(8) {
+		visibility: hidden!important;
+		display: none!important;
+	}
+
+	/*[[usrnme]]*/
+	h2[class="user-greeting-outer"] {
+		visibility: hidden!important;
+		display: none!important;
+		padding: 0px!important;
+	}
+
+	/*[[usrnme]]*/
+	div[id="page"] > p {
+		font-size: 20px!important;
+	}
+}
+
+@-moz-document url-prefix("https://e621.net/") {
+
+	/*[[searchbar]]*/
+	input[type="text"] {
+		filter: blur(3px)!important;
+	}
+	/*[[searchbar]]*/
+	span.search-name {
+		visibility: hidden!important;
+	}
+	
+	body {
+		--image-background: url(/packs/static/hex-b4fc28b5d7c3eb96e7b0.png)!important;
+		--color-background: #010711!important;
+		--color-foreground: #00122e!important;
+		--color-section: #04275c!important;
+		--color-section-lighten-5: #002967!important;
+		--color-section-lighten-10: #2b538e!important;
+		--color-section-darken-5: #193153!important;
+		--color-table-border: #2b538e!important;
+		--color-section-pending: #1f3c67!important;
+		--color-section-pending-border: #020f23!important;
+		--color-text: #fff!important;
+		--color-text-muted: #999!important;
+		--color-text-white: #fff!important;
+		--color-text-table-header: #e6e6e6!important;
+		--color-link: #b4c7d9!important;
+		--color-link-hover: #e9f2fa!important;
+		--color-link-active: #e8c446!important;
+		--color-button-active: #e8c446!important;
+		--color-link-last-page: #666!important;
+		--color-success: #006400!important;
+		--color-success-darken-5: #004b00!important;
+		--color-danger: maroon!important;
+		--color-danger-darken-5: #670000!important;
+		--color-danger-darken-10: #4d0000!important;
+		--color-warning: sienna!important;
+		--color-warning-darken-5: #8c4827!important;
+		--color-rating-explicit: #e45f5f!important;
+		--color-rating-questionable: #ffe666!important;
+		--color-rating-safe: #3e9e49!important;
+		--color-score-positive: #3e9e49!important;
+		--color-score-negative: #e45f5f!important;
+		--color-active-tag: #006ffa!important;
+		--color-dtext-quote: #b4c7d9!important;
+		--color-dtext-code: #ffe380!important;
+		--color-dtext-section: #17a2b8!important;
+		--color-user-member: #b4c7d9!important;
+		--color-user-member-alt: #2e76b4!important;
+		--color-user-privileged: #b4c7d9!important;
+		--color-user-privileged-alt: #2e76b4!important;
+		--color-user-contributor: #b4c7d9!important;
+		--color-user-contributor-alt: #2e76b4!important;
+		--color-user-blocked: #b4c7d9!important;
+		--color-user-blocked-alt: #2e76b4!important;
+		--color-user-former-staff: #78dca5!important;
+		--color-user-former-staff-alt: #4da073!important;
+		--color-user-janitor: #d82828!important;
+		--color-user-janitor-alt: #cc5151!important;
+		--color-user-moderator: #d82828!important;
+		--color-user-moderator-alt: #cc5151!important;
+		--color-user-admin: #e69500!important;
+		--color-user-admin-alt: #9d6703!important;
+		--color-tag-general: #b4c7d9!important;
+		--color-tag-general-alt: #2e76b4!important;
+		--color-tag-artist: #f2ac08!important;
+		--color-tag-artist-alt: #fbd67f!important;
+		--color-tag-copyright: #d0d!important;
+		--color-tag-copyright-alt: #ff5eff!important;
+		--color-tag-character: #0a0!important;
+		--color-tag-character-alt: #2bff2b!important;
+		--color-tag-species: #ed5d1f!important;
+		--color-tag-species-alt: #f6b295!important;
+		--color-tag-invalid: #ff3d3d!important;
+		--color-tag-invalid-alt: lighten(#ff3d3d, 25%)!important;
+		--color-tag-meta: #fff!important;
+		--color-tag-meta-alt: #666!important;
+		--color-tag-lore: #282!important;
+		--color-tag-lore-alt: #5fdb5f!important;
+		--color-tag-pool: wheat!important;
+		--color-tag-pool-alt: #d0b27a!important;
+		--color-spoiler-link: #b4c7d9!important;
+		--color-spoiler-link-hover: #e9f2fa!important;
+	}
+}
+
+@-moz-document url("https://e621.net/") {
+	
+	body {
+		background-color: var(--color-background)!important;
+		background-image: url("/data/mascots/53a014c46528923fc4baf2192af926bd.png")!important;
+	}
+	div.mascotbox {
+		background-color: #013!important;
+		background-image: url("/data/mascots/53a014c46528923fc4baf2192af926bd.png")!important;
+	}
+}
